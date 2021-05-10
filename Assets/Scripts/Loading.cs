@@ -7,7 +7,7 @@ public class Loading : MonoBehaviour
 {
     public void ClickonPlay()
     {
-        SceneManager.LoadScene("LevelKirby");
+        SceneManager.LoadScene("Loading_Kirby");
     }
 
     void Update()
