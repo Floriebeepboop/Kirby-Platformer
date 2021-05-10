@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Menu_Kirby.unity
+    guid: 717f040bf2a2bd0409e1bd3531cd4a74
+  - enabled: 1
+    path: Assets/Scenes/LevelKirby.unity
+    guid: 1ce5ee52f665b0b4faac1e48f1c9999a
+  - enabled: 1
+    path: Assets/Scenes/Loading_Kirby.unity
+    guid: 9a824fccd491979479eacfdc6b4a17f1
   m_configObjects: {}
