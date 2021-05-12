@@ -331,8 +331,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1955839335}
-        m_TargetAssemblyTypeName: Loading, Assembly-CSharp
-        m_MethodName: ClickonPlay
+        m_TargetAssemblyTypeName: Loadingver2, Assembly-CSharp
+        m_MethodName: LoadSceneAsync
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 1726737200}
   - component: {fileID: 1726737199}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas/Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,6 +1003,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955839333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95f2c9c1d67ad3841a7c869a4647e37d, type: 3}
+  m_Script: {fileID: 11500000, guid: f21e2d10f6d0adb4ebd32e738ee55d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: LevelKirby
+  ScreenToLoad: {fileID: 2031623868436931211, guid: 789867aae58d3c742abd0ff5b5187108, type: 3}
