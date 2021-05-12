@@ -5,20 +5,31 @@ using UnityEngine;
 
 public class MyPlayer : MonoBehaviour
 {
-    private float Speed; // private seulement utilisable dans ce script, float--> Speed value
-    private float MaxSpeed;
-    private float JumpForce;
-    private float GravityScale;
-    private Controls Ctrl;
-    private Animator Anim;
-
+    private float speed; // private seulement utilisable dans ce script, float--> nombre decimal, Speed--> nom de la valeur
+    private float maxSpeed;
+    private float jumpForce;
+    private float gravityScale;
+    private Controls ctrl;
+    private Animator anim;
+    private SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
 
-
-
-    void Start()
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+
+    private void OnEnable()
+    {
+        //on créé de nouveau controls nomé ctrl
+        ctrl = new Controls();
+        ctrl.Enable();
+        //ctrl.Main.Jump.performed += JumpOnperformed;
+        //ctrl.Main.MoveLR.performed += MoveLROnperformed;
+        //ctrl.Main.MoveLR.canceled += MoveLROncanceled;
     }
 
     void Update()
