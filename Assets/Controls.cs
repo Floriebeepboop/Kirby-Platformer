@@ -27,9 +27,9 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MoveLR"",
+                    ""name"": ""Move"",
                     ""type"": ""Button"",
-                    ""id"": ""e047446e-7945-40cf-9ddc-7ebc10be63f0"",
+                    ""id"": ""a42eccf1-91a8-4fc4-b53c-55be3a6e3c74"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -48,35 +48,35 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""LRKeyboard"",
-                    ""id"": ""08a422cb-f2da-47a8-bc98-adf16073218b"",
+                    ""name"": ""LR"",
+                    ""id"": ""f5f9eda0-fc11-452e-863d-5192c2f9a84e"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveLR"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""f4bd51e0-1ef4-45b4-9d14-b622b243d08f"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""id"": ""2e12ce03-7af1-4feb-bebc-adbd2b42ef7d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveLR"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""a04c2ff4-0034-4a62-878b-aa6aead2f728"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""d81c0f50-28d1-4d27-82c3-09f98cd06124"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveLR"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -88,7 +88,7 @@ public class @Controls : IInputActionCollection, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_Jump = m_Main.FindAction("Jump", throwIfNotFound: true);
-        m_Main_MoveLR = m_Main.FindAction("MoveLR", throwIfNotFound: true);
+        m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,13 +139,13 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
     private readonly InputAction m_Main_Jump;
-    private readonly InputAction m_Main_MoveLR;
+    private readonly InputAction m_Main_Move;
     public struct MainActions
     {
         private @Controls m_Wrapper;
         public MainActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Main_Jump;
-        public InputAction @MoveLR => m_Wrapper.m_Main_MoveLR;
+        public InputAction @Move => m_Wrapper.m_Main_Move;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -158,9 +158,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnJump;
-                @MoveLR.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveLR;
-                @MoveLR.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveLR;
-                @MoveLR.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMoveLR;
+                @Move.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -168,9 +168,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @MoveLR.started += instance.OnMoveLR;
-                @MoveLR.performed += instance.OnMoveLR;
-                @MoveLR.canceled += instance.OnMoveLR;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
             }
         }
     }
@@ -178,6 +178,6 @@ public class @Controls : IInputActionCollection, IDisposable
     public interface IMainActions
     {
         void OnJump(InputAction.CallbackContext context);
-        void OnMoveLR(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }

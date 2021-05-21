@@ -14,9 +14,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MoveLR",
+                    "name": "Move",
                     "type": "Button",
-                    "id": "e047446e-7945-40cf-9ddc-7ebc10be63f0",
+                    "id": "a42eccf1-91a8-4fc4-b53c-55be3a6e3c74",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -35,35 +35,35 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "LRKeyboard",
-                    "id": "08a422cb-f2da-47a8-bc98-adf16073218b",
+                    "name": "LR",
+                    "id": "f5f9eda0-fc11-452e-863d-5192c2f9a84e",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLR",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
-                    "id": "f4bd51e0-1ef4-45b4-9d14-b622b243d08f",
-                    "path": "<Keyboard>/q",
+                    "id": "2e12ce03-7af1-4feb-bebc-adbd2b42ef7d",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLR",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
-                    "id": "a04c2ff4-0034-4a62-878b-aa6aead2f728",
-                    "path": "<Keyboard>/d",
+                    "id": "d81c0f50-28d1-4d27-82c3-09f98cd06124",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveLR",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
