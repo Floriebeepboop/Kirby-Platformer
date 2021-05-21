@@ -28,7 +28,7 @@ public class Loadingver2 : MonoBehaviour
             if (chargement.progress >= 0.9f)
             {
                 chargement.allowSceneActivation = true;
-                //ecran.GetComponent<Animator>().SetTrigger("Disappear");
+                screen.GetComponent<Animator>().SetTrigger("Disappear");
                 Destroy(screen);
             }
 
