@@ -34,11 +34,16 @@ public class MyPlayer : MonoBehaviour
     {
         move = obj.ReadValue<float>();
         spriteRenderer.flipX = (move < 0);
+        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
+
+        anim.SetBool("run", true);
+
     }
 
     private void MoveOnCanceled(InputAction.CallbackContext obj)
     {
         move = 0;
+        anim.SetBool("run", false);
     }
 
     private void JumpOnPerformed(InputAction.CallbackContext obj)
@@ -75,17 +80,7 @@ public class MyPlayer : MonoBehaviour
         spriteRenderer.flipX = isFacingLeft;
     }
 
-    private void FixedUpdate()
-    {
-        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
-        if (isRunning)
-        {
-            anim.SetBool("run", true);
-        }
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+     private void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
     }
