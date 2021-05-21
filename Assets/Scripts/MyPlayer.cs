@@ -12,12 +12,12 @@ public class MyPlayer : MonoBehaviour
     [SerializeField] private LayerMask ground;
     private Animator anim;
     private float move;
-    private Vector2 direction;
+    private float direction;
     private Controls ctrl;
     private bool isJumping = false;
+    private bool isRunning;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
-    private bool isDead = false;
     private SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
 
@@ -43,10 +43,15 @@ public class MyPlayer : MonoBehaviour
 
     private void JumpOnPerformed(InputAction.CallbackContext obj)
     {
-        if (isJumping == true)
+
+       if (isGrounded)
+            {
+            isGrounded = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
-        anim.SetBool("jumpForce", true);
+            anim.SetBool("Jump", true);
+            }
+        
     }
 
     void Start()
@@ -58,12 +63,12 @@ public class MyPlayer : MonoBehaviour
 
     private void Flip()
     {
-        if (direction.x < -0.1f)
+        if (direction < -0.1f)
         {
             isFacingLeft = true;
         }
 
-        if (direction.x > 0.1f)
+        if (direction > 0.1f)
         {
             isFacingLeft = false;
         }
@@ -72,37 +77,33 @@ public class MyPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /* var horizontalSpeed = Mathf.Abs(rb.velocity.x);
-         if (horizontalSpeed < maxSpeed)
-             rb.AddForce(new Vector2(speed * move, 0));
-
-         anim.SetFloat("speed", horizontalSpeed);*/
-        var horizontalSpeed = Mathf.Abs(rb.velocity.x);
-        if (horizontalSpeed < maxSpeed)
+        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
+        if (isRunning)
         {
-            rb.AddForce(new Vector2(speed * move, 0));
+            anim.SetBool("run", true);
         }
 
-        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
-        anim.SetBool("IsRunning", isRunning);
-        var isJumping = !isGrounded && rb.velocity.y > 0;
-        anim.SetBool("IsJumping", isJumping);
-        //var isDead =
-        //anim.SetBool()
-        //var isDescending = !isGrounded && rb.velocity.y < 0;
-        //anim.SetBool("IsDescending", isDescending);
+    }
 
-        Flip();
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isGrounded = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 
     void Update()
     {
-        var touch = Physics2D.Raycast(transform.position, new Vector2(0, -1), 0.001f, 9);
-        if (touch.collider != null)
-            isJumping = true;
+        
+        if (isGrounded)
+        {
+            anim.SetBool("Jump", false);
+        }
 
-        else
-            isJumping = false;
+
     }
 }
 
