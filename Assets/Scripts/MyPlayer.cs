@@ -9,15 +9,17 @@ public class MyPlayer : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravityScale;
+    [SerializeField] private LayerMask ground;
     private Animator anim;
+    private float move;
+    private Vector2 direction;
     private Controls ctrl;
-    private bool isJumping;
+    private bool isJumping = false;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
+    private bool isDead = false;
     private SpriteRenderer spriteRenderer;
-    private float move;
     Rigidbody2D rb;
-    [SerializeField] private LayerMask ground;
 
     private void OnEnable()
     {
@@ -54,13 +56,43 @@ public class MyPlayer : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void Flip()
+    {
+        if (direction.x < -0.1f)
+        {
+            isFacingLeft = true;
+        }
+
+        if (direction.x > 0.1f)
+        {
+            isFacingLeft = false;
+        }
+        spriteRenderer.flipX = isFacingLeft;
+    }
+
     private void FixedUpdate()
     {
+        /* var horizontalSpeed = Mathf.Abs(rb.velocity.x);
+         if (horizontalSpeed < maxSpeed)
+             rb.AddForce(new Vector2(speed * move, 0));
+
+         anim.SetFloat("speed", horizontalSpeed);*/
         var horizontalSpeed = Mathf.Abs(rb.velocity.x);
         if (horizontalSpeed < maxSpeed)
+        {
             rb.AddForce(new Vector2(speed * move, 0));
+        }
 
-        anim.SetFloat("Speed", horizontalSpeed);
+        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
+        anim.SetBool("IsRunning", isRunning);
+        var isJumping = !isGrounded && rb.velocity.y > 0;
+        anim.SetBool("IsJumping", isJumping);
+        //var isDead =
+        //anim.SetBool()
+        //var isDescending = !isGrounded && rb.velocity.y < 0;
+        //anim.SetBool("IsDescending", isDescending);
+
+        Flip();
     }
 
     void Update()
