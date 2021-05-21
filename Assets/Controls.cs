@@ -28,9 +28,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""e047446e-7945-40cf-9ddc-7ebc10be63f0"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""type"": ""Button"",
+                    ""id"": ""a42eccf1-91a8-4fc4-b53c-55be3a6e3c74"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -48,9 +48,9 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""0cc89db2-0446-4119-9768-beed1b05f06b"",
-                    ""path"": ""2DVector"",
+                    ""name"": ""LR"",
+                    ""id"": ""f5f9eda0-fc11-452e-863d-5192c2f9a84e"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -59,9 +59,9 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""39a0ad9e-8db4-45d2-8ae9-c5dda9446ce7"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""name"": ""negative"",
+                    ""id"": ""2e12ce03-7af1-4feb-bebc-adbd2b42ef7d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -70,31 +70,9 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""be07b0a8-c306-434b-9783-7f3244fa5b16"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""48b30047-3564-4657-8f9d-44da5e95a3d2"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""8a93b463-1b6b-492c-8b8c-9971261863ac"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""positive"",
+                    ""id"": ""d81c0f50-28d1-4d27-82c3-09f98cd06124"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

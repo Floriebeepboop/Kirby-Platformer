@@ -7,18 +7,74 @@ public class MyPlayer : MonoBehaviour
 {
     [SerializeField] private float speed; // private seulement utilisable dans ce script, float--> nombre decimal, Speed--> nom de la valeur
     [SerializeField] private float maxSpeed;
-    [SerializeField]private float jumpForce;
+    [SerializeField] private float jumpForce;
     [SerializeField] private float gravityScale;
     private Animator anim;
     private Controls ctrl;
+    private bool isJumping;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
     private SpriteRenderer spriteRenderer;
-    private Vector2 directionn;
+    private float move;
     Rigidbody2D rb;
     [SerializeField] private LayerMask ground;
 
+    private void OnEnable()
+    {
+        ctrl = new Controls();
+        ctrl.Enable();
+        ctrl.Main.Move.performed += MoveOnPerformed;
+        ctrl.Main.Move.canceled += MoveOnCanceled;
+        ctrl.Main.Jump.performed += JumpOnPerformed;
+    }
 
+    private void MoveOnPerformed(InputAction.CallbackContext obj)
+    {
+        move = obj.ReadValue<float>();
+        spriteRenderer.flipX = (move < 0);
+    }
+
+    private void MoveOnCanceled(InputAction.CallbackContext obj)
+    {
+        move = 0;
+    }
+
+    private void JumpOnPerformed(InputAction.CallbackContext obj)
+    {
+        if (isJumping == true)
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+        anim.SetBool("jumpForce", true);
+    }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void FixedUpdate()
+    {
+        var horizontalSpeed = Mathf.Abs(rb.velocity.x);
+        if (horizontalSpeed < maxSpeed)
+            rb.AddForce(new Vector2(speed * move, 0));
+
+        anim.SetFloat("Speed", horizontalSpeed);
+    }
+
+    void Update()
+    {
+        var touch = Physics2D.Raycast(transform.position, new Vector2(0, -1), 0.001f, 9);
+        if (touch.collider != null)
+            isJumping = true;
+
+        else
+            isJumping = false;
+    }
+}
+
+/*
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,11 +92,11 @@ public class MyPlayer : MonoBehaviour
     }
     private void MoveOnperformed(InputAction.CallbackContext obj)
     {
-        directionn = obj.ReadValue<Vector2>();
+        directionn = obj.ReadValue<float>();
     }
     private void MoveOncanceled(InputAction.CallbackContext obj)
     {
-        directionn = Vector2.zero;
+        directionn = 0;
     }
     //gestion des sauts
     private void JumpOnperformed(InputAction.CallbackContext obj)
@@ -63,39 +119,21 @@ public class MyPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var direction = new Vector2
+        var horizontalSpeed = Mathf.Abs(rb.velocity.x);
+
+        if (horizontalSpeed < maxSpeed)
         {
-           x = directionn.x,
-           y = 0
-        };
-            // Déplacement
-        if (rb.velocity.sqrMagnitude < maxSpeed)
-        {
-            rb.AddForce(direction * speed);
+            rb.AddForce(new Vector2(speed * directionn, 0));
         }
 
-        /*var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
+        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
         anim.SetBool("IsRunning", isRunning);
         var isAscending = !isGrounded && rb.velocity.y > 0;
         anim.SetBool("IsAscending", isAscending);
         var isDescending = !isGrounded && rb.velocity.y < 0;
         anim.SetBool("IsDescending", isDescending);
-        anim.SetBool("IsGrounded", isGrounded);
-        Flip();*/
-    }
-
-    private void Flip()
-    {
-       if (directionn.x < -0.1f)
-       {
-           isFacingLeft = true;
-       }
-
-       if (directionn.x > 0.1f)
-       {
-           isFacingLeft = false;
-       }
-     spriteRenderer.flipX = isFacingLeft;
+        Flip();
     }
 
 }
+*/
