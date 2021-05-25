@@ -14,7 +14,7 @@ public class MyPlayer : MonoBehaviour
     private float move;
     private float direction;
     private Controls ctrl;
-    private float isRunning ;
+    private float isRunning;
     private bool isJumping = false;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
@@ -23,6 +23,7 @@ public class MyPlayer : MonoBehaviour
 
     void Start()
     {
+        GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -41,7 +42,7 @@ public class MyPlayer : MonoBehaviour
     {
         move = obj.ReadValue<float>();
         spriteRenderer.flipX = (move < 0);
-        
+
         anim.SetBool("run", true);
     }
 
@@ -54,14 +55,14 @@ public class MyPlayer : MonoBehaviour
     private void JumpOnPerformed(InputAction.CallbackContext obj)
     {
 
-       if (isGrounded)
-            {
+        if (isGrounded)
+        {
             isGrounded = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
             anim.SetBool("Jump", true);
-            }
-        
+        }
+
     }
 
     private void FixedUpdate()
@@ -87,7 +88,7 @@ public class MyPlayer : MonoBehaviour
         spriteRenderer.flipX = isFacingLeft;
     }
 
-     private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
     }
@@ -99,13 +100,21 @@ public class MyPlayer : MonoBehaviour
 
     void Update()
     {
-        
+
         if (isGrounded)
         {
             anim.SetBool("Jump", false);
         }
 
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Fire"))
+        {
+            anim.SetBool("isOnFire", true);
+
+        }
     }
 }
 
