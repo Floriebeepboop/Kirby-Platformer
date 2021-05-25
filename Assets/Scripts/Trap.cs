@@ -24,7 +24,7 @@ public class Trap : MonoBehaviour
         {
             trapAnim.SetBool("isOnFire", false);
         }
-
+       
     }
 
 }

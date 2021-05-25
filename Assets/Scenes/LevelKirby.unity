@@ -1643,7 +1643,6 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 2048
-  pList: []
 --- !u!1 &1149229767
 GameObject:
   m_ObjectHideFlags: 0
