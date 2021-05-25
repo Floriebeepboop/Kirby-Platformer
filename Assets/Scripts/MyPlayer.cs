@@ -14,7 +14,6 @@ public class MyPlayer : MonoBehaviour
     private float move;
     private float direction;
     private Controls ctrl;
-    private float isRunning;
     private bool isJumping = false;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
@@ -112,6 +111,7 @@ public class MyPlayer : MonoBehaviour
     {
         if (collision.CompareTag("Fire"))
         {
+            speed = 0;
             anim.SetBool("isOnFire", true);
 
         }
