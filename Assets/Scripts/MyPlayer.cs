@@ -14,12 +14,19 @@ public class MyPlayer : MonoBehaviour
     private float move;
     private float direction;
     private Controls ctrl;
+    private float isRunning ;
     private bool isJumping = false;
-    private bool isRunning;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
     private SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
@@ -34,10 +41,8 @@ public class MyPlayer : MonoBehaviour
     {
         move = obj.ReadValue<float>();
         spriteRenderer.flipX = (move < 0);
-        var isRunning = isGrounded && Mathf.Abs(rb.velocity.x) > 0.1f;
-
+        
         anim.SetBool("run", true);
-
     }
 
     private void MoveOnCanceled(InputAction.CallbackContext obj)
@@ -59,11 +64,13 @@ public class MyPlayer : MonoBehaviour
         
     }
 
-    void Start()
+    private void FixedUpdate()
     {
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        var isRunning = Mathf.Abs(rb.velocity.x); //isGrounded && 
+        if (isRunning < maxSpeed)
+        {
+            rb.AddForce(new Vector2(speed * move, 0));
+        }
     }
 
     private void Flip()
