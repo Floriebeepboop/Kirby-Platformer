@@ -14,14 +14,17 @@ public class MyPlayer : MonoBehaviour
     private float move;
     private float direction;
     private Controls ctrl;
-    private bool isJumping = false;
+    private bool isOnFire = false;
     private bool isGrounded = false;
     private bool isFacingLeft = true;
     private SpriteRenderer spriteRenderer;
+    private Vector3 respawnPoint;
     Rigidbody2D rb;
+    public List<Transform> pList = new List<Transform>();
 
     void Start()
     {
+        respawnPoint = new Vector3(0, 0, -0.1f);
         GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -106,16 +109,30 @@ public class MyPlayer : MonoBehaviour
         }
 
     }
+    IEnumerator RespawnTimer()
+    {
 
+        yield return new WaitForSeconds(3);
+
+        transform.position = respawnPoint;
+        anim.SetBool("isOnFire", false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+ 
         if (collision.CompareTag("Fire"))
         {
             speed = 0;
+            isGrounded = false;
+            rb.AddForce(new Vector2(0, 0));
             anim.SetBool("isOnFire", true);
-
+            StartCoroutine(RespawnTimer());
         }
+
+
+
     }
+
 }
 
 /*
