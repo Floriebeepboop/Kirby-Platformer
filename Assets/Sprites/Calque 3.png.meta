@@ -35,6 +35,51 @@ TextureImporter:
   - first:
       213: 1413470521879225471
     second: Calque 3_10
+  - first:
+      213: 6435530952270502200
+    second: Calque 3_11
+  - first:
+      213: 596326900669491243
+    second: Calque 3_12
+  - first:
+      213: -4738693007841500755
+    second: Calque 3_13
+  - first:
+      213: -3343660792318730707
+    second: Calque 3_14
+  - first:
+      213: -6477546274771130803
+    second: Calque 3_15
+  - first:
+      213: 3284906480623881419
+    second: Calque 3_16
+  - first:
+      213: -1053954099918208217
+    second: Calque 3_17
+  - first:
+      213: 6737991028435507743
+    second: Calque 3_18
+  - first:
+      213: 8899700542478571617
+    second: Calque 3_19
+  - first:
+      213: -4053970547677588259
+    second: Calque 3_20
+  - first:
+      213: 733427572500234631
+    second: Calque 3_21
+  - first:
+      213: 259562998540449267
+    second: Calque 3_22
+  - first:
+      213: 554739271089367000
+    second: Calque 3_23
+  - first:
+      213: 1505118559437997735
+    second: Calque 3_24
+  - first:
+      213: -9018328904968081959
+    second: Calque 3_25
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,232 +215,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Calque 3_0
+      name: Calque 3_11
       rect:
         serializedVersion: 2
         x: 173
-        y: 0
+        y: 695
         width: 46
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26ab5adbd620bc580800000000000000
-      internalID: -8805941976036427166
+      spriteID: 8395d1fdd499f4950800000000000000
+      internalID: 6435530952270502200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Calque 3_1
+      name: Calque 3_12
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 735
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b282a6c1824964800800000000000000
+      internalID: 596326900669491243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_13
       rect:
         serializedVersion: 2
         x: 231
-        y: 2
+        y: 586
         width: 58
-        height: 128
+        height: 239
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4995f4268ba210a10800000000000000
-      internalID: 1873825891374553492
+      spriteID: da1eaf7e0d7cc3eb0800000000000000
+      internalID: -4738693007841500755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Calque 3_2
+      name: Calque 3_14
       rect:
         serializedVersion: 2
         x: 301
-        y: 2
+        y: 585
         width: 58
-        height: 128
+        height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51d6ada640bc5f720800000000000000
-      internalID: 2879430756606307605
+      spriteID: d2ed070993ee891d0800000000000000
+      internalID: -3343660792318730707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Calque 3_3
+      name: Calque 3_15
       rect:
         serializedVersion: 2
         x: 371
-        y: 2
+        y: 587
         width: 56
-        height: 128
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2539eb5661c849390800000000000000
-      internalID: -7812465425756810414
+      spriteID: d46ac1c8bf12b16a0800000000000000
+      internalID: -6477546274771130803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Calque 3_4
+      name: Calque 3_16
       rect:
         serializedVersion: 2
         x: 440
-        y: 2
+        y: 587
         width: 55
-        height: 128
+        height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1bfb85d05c1cfca0800000000000000
-      internalID: -5981875071549179105
+      spriteID: bcc07f93a05569d20800000000000000
+      internalID: 3284906480623881419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Calque 3_5
-      rect:
-        serializedVersion: 2
-        x: 131
-        y: 3
-        width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f5a2d7cb9fd51cf0800000000000000
-      internalID: -282073541475392016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Calque 3_6
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 3
-        width: 31
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf71a0cb294e71230800000000000000
-      internalID: 3609604945231878139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Calque 3_7
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 5
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 652bf1d92c2921eb0800000000000000
-      internalID: -4750573292365041066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Calque 3_8
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 5
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 941eab34880d47b80800000000000000
-      internalID: -8397858121468681911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Calque 3_9
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 5
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62ecb025a68c29d60800000000000000
-      internalID: 7895593455702494758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Calque 3_10
+      name: Calque 3_17
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
+        y: 700
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f74e81563f7ad9310800000000000000
-      internalID: 1413470521879225471
+      spriteID: 7230fc8845a9f51f0800000000000000
+      internalID: -1053954099918208217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 700
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1adaa51427228d50800000000000000
+      internalID: 6737991028435507743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_19
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 700
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16859c1ad76128b70800000000000000
+      internalID: 8899700542478571617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 700
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd418c704476db7c0800000000000000
+      internalID: -4053970547677588259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_21
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 691
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7818a57cd78ad2a00800000000000000
+      internalID: 733427572500234631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 3_23
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 683
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7ad3c8d64d2b700800000000000000
+      internalID: 554739271089367000
       vertices: []
       indices: 
       edges: []
@@ -403,7 +469,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d732d6820cdb69540a6e5e4c54f0fdea
+    spriteID: 7bd9e315e1f107a49bfcead325a2c9de
     internalID: 0
     vertices: []
     indices: 
