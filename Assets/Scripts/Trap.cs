@@ -17,7 +17,7 @@ public class Trap : MonoBehaviour
         if(collision.CompareTag( "Player"))
         {
             trapAnim.SetBool("isOnFire", true);
-            Debug.Log($"{name}Triggered");
+            //Debug.Log($"{name}Triggered");
 
         }
         else
@@ -28,5 +28,12 @@ public class Trap : MonoBehaviour
     }
 
 }
+/*
+ * pour interagir avec l'objet il faut un collider trigger par defaut
+ * reset metode 
+ * quand le collider du joueur touche le collider du feu, le feu s'active
+ * lancer l'animation du feu qui explose
+ * si il ne se passe rien l'animation ne se lance pas 
+ * 
+ */
 
-//ttps://www.youtube.com/watch?v=3f-yrV7uoC4
