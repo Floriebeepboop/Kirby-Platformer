@@ -29,11 +29,18 @@ public class Trap : MonoBehaviour
 
 }
 /*
- * pour interagir avec l'objet il faut un collider trigger par defaut
- * reset metode 
- * quand le collider du joueur touche le collider du feu, le feu s'active
- * lancer l'animation du feu qui explose
- * si il ne se passe rien l'animation ne se lance pas 
- * 
+ * le jeu est lancé
+ * {
+ *      on recupere le component collider du feu qui est trigger/activé par défaut
+ *      on recupere l'animator du feu
+ * }
+ * quand le collider du joueur touche le collider du feu
+ * {
+ *  le feu s'active
+ *      lancer l'animation du feu qui explose
+ *  si il ne se passe rien
+ *  {
+ *  l'animation ne se lance pas 
+ * }
  */
 

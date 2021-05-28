@@ -115,3 +115,10 @@ public class MyPlayer : MonoBehaviour
     }
 
 }
+
+/*si le collider du joueur touche celui du feu 
+ * on ne peut plus bouger
+ * on ne peut plus sauter
+ * on lance l'animation de mort
+ * on respawn apres 3sec
+ */
